@@ -65,17 +65,32 @@ img {
 }
 
 #twitter:hover {
-    border-radius: 100%; /* will morph back to original in same time when un-hover */
-    animation: twitterAnim 1.5s infinite alternate; /* will change back to original immediately when un-hover */
+    animation: twitterGrayScale 2s 0s 2 alternate, twitterInvert 2s linear 4s 2 alternate, twitterHue 10s linear 8s infinite alternate; 
 }
 
-@keyframes twitterAnim {
+@keyframes twitterGrayScale {
     0% { filter: grayscale(0%); }
     20% { filter: grayscale(20%); }
     40% { filter: grayscale(40%); }
     60% { filter: grayscale(60%); }
     80% { filter: grayscale(80%); }
     100% { filter: grayscale(100%); }
+}
+
+@keyframes twitterInvert {
+    0% { filter: invert(0%); }
+    20% { filter: invert(40%); }
+    40% { filter: invert(80%); }
+    60% { filter: invert(120%); }
+    80% { filter: invert(160%); }
+    100% { filter: invert(200%); }
+}
+
+@keyframes twitterHue {
+    25% { filter: hue-rotate(90deg); }
+    50% { filter: hue-rotate(180deg); }
+    75% { filter: hue-rotate(270deg); }
+    100% { filter: hue-rotate(360deg); }
 }
 
 #insta {
